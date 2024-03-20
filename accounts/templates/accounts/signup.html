@@ -1,0 +1,48 @@
+{% extends '../login_layout.html' %}
+
+{% block content %}
+<div class="container" id="main-area">
+    <div class="row">
+        <div class="col" id="header-area">
+            <h1>MILK? want some?</h1><br>
+            <p>Join us to get our best Milks by creating your Milkstore Account</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col" id="form-area">
+            <form method="POST" action="signup">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="input_username">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Who do you want to be called?">
+                </div>
+                <div class="form-group">
+                    <label for="password_input">Password</label>
+                    <input type="password" class="form-control" name="password1" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <label for="password_input">Confirm Password</label>
+                    <input type="password" class="form-control" name="password2" placeholder="password">
+                </div>
+                <br>
+                {% if messages %}
+                <div class="row">
+                    {% for message in messages %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary">Sign up!</button>
+                    </div>
+                    <div class="col-6">
+                        <a href="{% url 'login' %}">back to login</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

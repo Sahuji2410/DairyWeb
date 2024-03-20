@@ -1,0 +1,19 @@
+#nav {
+    margin-top: 20px;
+    margin-bottom: 14px;
+}
+
+.card-img-top {
+    width: 80%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.col-4 {
+    padding: 15px;
+}
+
+.card img {
+    margin : auto;
+    margin-top: 15px;
+}
